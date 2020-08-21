@@ -1,6 +1,6 @@
 # Windows-PrivEsc-Setup
 
-Forked from Tib3rius for setting up a Windows 10 for running through the privilege escalation exercises.
+Forked from Tib3rius to set up a Windows 10 for running through the privilege escalation exercises.
 
 As of 1809, Windows Defender keep quarantining the exploit binaries. 
 
