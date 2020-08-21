@@ -5,3 +5,7 @@ Forked from Tib3rius to set up a Windows 10 for running through the privilege es
 As of 1809, Windows Defender keep quarantining the exploit binaries. 
 
 Created a simple batch (PowerShell) script to disable Windws Defender and SmartScreen.  NOTE: Need to be local admin on the box to run.
+
+
+Ref:
+https://docs.microsoft.com/en-us/powershell/module/defender/Set-MpPreference?view=win10-ps
