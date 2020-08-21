@@ -17,6 +17,13 @@ PowerShell Set-MpPreference -EnableNetworkProtection AuditMode -Force
 PowerShell Set-MpPreference -MAPSReporting Disabled 
 PowerShell Set-MpPreference -SubmitSamplesConsent NeverSend
 
+:: Take no Action when Threat is Detected
+PowerShell Set-MpPreference -SevereThreatDefaultAction NoAction
+PowerShell Set-MpPreference -HighThreatDefaultAction NoAction
+PowerShell Set-MpPreference -ModerateThreatDefaultAction NoAction
+PowerShell Set-MpPreference -LowThreatDefaultAction NoAction
+PowerShell Set-MpPreference -UnknownThreatDefaultAction NoAction
+
 :: Disable SmartScreen Filter
 Powershell Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "SmartScreenEnabled" -Type String -Value "Off"
 PowerShell Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AppHost" -Name "EnableWebContentEvaluation" -Type DWord -Value 0
