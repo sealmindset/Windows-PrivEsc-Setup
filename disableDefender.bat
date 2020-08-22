@@ -33,3 +33,6 @@ PowerShell Stop-Service wuauserv
 PowerShell Set-Service wuauserv -StartupType Disabled
 :: Verify Windows Update is disabled
 :: PowerShell Get-WmiObject win32_service -Filter "name='wuauserv'"
+
+REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v Start /t REG_DWORD /d 4 /f
+REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc" /v Start /t REG_DWORD /d 4 /f
