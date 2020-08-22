@@ -27,3 +27,8 @@ PowerShell Set-MpPreference -UnknownThreatDefaultAction NoAction
 :: Disable SmartScreen Filter
 Powershell Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersion\Explorer" -Name "SmartScreenEnabled" -Type String -Value "Off"
 PowerShell Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AppHost" -Name "EnableWebContentEvaluation" -Type DWord -Value 0
+
+:: Disable Windows Update
+PowerShell stop-service wuauserv
+PowerShell set-service wuauserv –startup disabled
+PowerShell get-wmiobject win32_service –filter "name='wuauserv'"
