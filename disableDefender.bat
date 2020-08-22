@@ -29,6 +29,7 @@ Powershell Set-ItemProperty -Path "HKLM:\Software\Microsoft\Windows\CurrentVersi
 PowerShell Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\AppHost" -Name "EnableWebContentEvaluation" -Type DWord -Value 0
 
 :: Disable Windows Update
-PowerShell stop-service wuauserv
-PowerShell set-service wuauserv –startup disabled
-PowerShell get-wmiobject win32_service –filter "name='wuauserv'"
+PowerShell Stop-Service wuauserv
+PowerShell Set-Service wuauserv -StartupType Disabled
+:: Verify Windows Update is disabled
+:: PowerShell Get-WmiObject win32_service -Filter "name='wuauserv'"
